@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DC Fast Charging Rig</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="main-layout">
+    <!-- Left Section: Controls and Modes -->
+    <div class="left-panel">
+      <h1>DC Fast Charging Rig</h1>
+
+      <!-- Discharge button will be toggled via JS and only visible on the main screen -->
+      <div class="controls" id="discharge-controls">
+        <button id="discharge-btn" onclick="toggleRelay('discharge')" class="discharge-btn">Discharge</button>
+      </div>
+
+      <div class="mode-buttons">
+        <button onclick="selectMode('M1')" class="mode-btn">Mode M1</button>
+        <button onclick="selectMode('M2')" class="mode-btn">Mode M2</button>
+        <button onclick="selectMode('M3')" class="mode-btn">Mode M3</button>
+        <button onclick="selectMode('M4')" class="mode-btn">Mode M4</button>
+      </div>
+    </div>
+
+    <!-- Right Section: Info Panels + Graph -->
+    <div class="right-panel">
+      <div class="info-panels">
+        <div class="info-block" id="grid-info">
+          <h2>Grid Info</h2>
+          <p>Voltage: <span id="grid-voltage"></span></p>
+          <p>Current: <span id="grid-current"></span></p>
+          <p>Frequency: <span id="grid-frequency"></span></p>
+          <p>Power: <span id="grid-power"></span></p>
+        </div>
+
+        <div class="info-block" id="charger-info">
+          <h2>Charger Info</h2>
+          <p>Voltage: <span id="charger-voltage"></span></p>
+          <p>Current: <span id="charger-current"></span></p>
+          <p>Power: <span id="charger-power"></span></p>
+        </div>
+
+        <div class="info-block" id="battery-info">
+          <h2>Battery Info</h2>
+          <p>Voltage: <span id="battery-voltage"></span></p>
+          <p>Current: <span id="battery-current"></span></p>
+          <p>Power: <span id="battery-power"></span></p>
+          <p>SOC: <span id="battery-soc"></span>%</p>
+          <p>SOH: <span id="battery-soh"></span>%</p>
+          <p>Cycles: <span id="battery-cycles"></span></p>
+          <p>Status: <span id="battery-status"></span></p>
+          <p>Time Elapsed: <span id="battery-time"></span></p>
+          <p>Temperature: <span id="battery-temp"></span>&deg;C</p>
+        </div>
+      </div>
+
+      <!-- Chart Section -->
+      <div class="chart-container">
+        <canvas id="batteryChart"></canvas>
+      </div>
+
+      <!-- Export Button -->
+      <button id="export-btn" onclick="exportData()" class="export-btn">Export Graph Data</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

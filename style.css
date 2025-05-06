@@ -1,0 +1,188 @@
+/* General Body Styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Main layout with horizontal panels */
+.main-layout {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* Left Panel: Controls and Mode Buttons */
+.left-panel {
+  width: 25%;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 30px 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 15px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #00e6e6;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Controls and Mode buttons */
+.controls, .mode-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.controls button, .mode-buttons button {
+  padding: 15px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 12px;
+  background: #00bfff;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.controls button:hover, .mode-buttons button:hover {
+  background: #0085b7;
+  transform: scale(1.05);
+}
+
+.mode-buttons button.active-mode {
+  transform: scale(1.1);
+  background: linear-gradient(45deg, #00ffff, #0000ff);
+  box-shadow: 0 0 15px #00ffff;
+}
+
+/* Hide discharge button when mode is selected */
+body.mode-M1 #discharge-btn,
+body.mode-M2 #discharge-btn,
+body.mode-M3 #discharge-btn,
+body.mode-M4 #discharge-btn {
+  display: none;
+}
+
+/* Right Panel: Info and Graph */
+.right-panel {
+  width: 75%;
+  padding: 30px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.info-panels {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.info-block {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 12px;
+  width: 30%;
+  box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2);
+}
+
+.info-block h2 {
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  color: #00e6e6;
+  font-weight: 600;
+}
+
+.info-block p {
+  font-size: 1.1em;
+  margin: 5px 0;
+  font-weight: 300;
+  color: #ddd;
+}
+
+/* Chart Container */
+.chart-container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+canvas {
+  width: 100% !important;
+  height: 400px !important;
+}
+
+/* Export Button */
+.export-btn {
+  padding: 12px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 12px;
+  background: #32cd32;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.export-btn:hover {
+  background: #228b22;
+  transform: scale(1.05);
+}
+
+/* Mode themes */
+body.mode-M1 {
+  background: linear-gradient(135deg, #f06, #ffcc00);
+}
+
+body.mode-M2 {
+  background: linear-gradient(135deg, #f0e68c, #0066cc);
+}
+
+body.mode-M3 {
+  background: linear-gradient(135deg, #ff7f50, #4b0082);
+}
+
+body.mode-M4 {
+  background: linear-gradient(135deg, #32cd32, #228b22);
+}
+
+/* Responsive layout */
+@media (max-width: 1024px) {
+  .main-layout {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left-panel, .right-panel {
+    width: 100%;
+  }
+
+  .info-block {
+    width: 100%;
+  }
+}
