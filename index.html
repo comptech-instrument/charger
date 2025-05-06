@@ -7,12 +7,19 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div class="main-layout">
+
+  <!-- Fullscreen Launch Screen -->
+  <div id="launch-screen" class="launch-screen">
+    <h1>DC Fast Charging Rig</h1>
+    <button id="startButton" onclick="startApp()">Start Simulation</button>
+  </div>
+
+  <!-- Main App Layout -->
+  <div class="main-layout" id="app" style="display: none;">
     <!-- Left Section: Controls and Modes -->
     <div class="left-panel">
       <h1>DC Fast Charging Rig</h1>
 
-      <!-- Discharge button will be toggled via JS and only visible on the main screen -->
       <div class="controls" id="discharge-controls">
         <button id="discharge-btn" onclick="toggleRelay('discharge')" class="discharge-btn">Discharge</button>
       </div>
@@ -41,6 +48,7 @@
           <p>Voltage: <span id="charger-voltage"></span></p>
           <p>Current: <span id="charger-current"></span></p>
           <p>Power: <span id="charger-power"></span></p>
+          <p><strong>Charge Rate (C):</strong> <span id="charger-c-rate">0.25</span></p>
         </div>
 
         <div class="info-block" id="battery-info">
@@ -69,5 +77,24 @@
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="script.js"></script>
+  <script>
+    function startApp() {
+      const elem = document.documentElement;
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) {
+        elem.msRequestFullscreen();
+      }
+
+      // Hide launch screen, show app layout
+      document.getElementById("launch-screen").style.display = "none";
+      document.getElementById("app").style.display = "flex";
+
+      // Start in default mode
+      selectMode("M1");
+    }
+  </script>
 </body>
 </html>
