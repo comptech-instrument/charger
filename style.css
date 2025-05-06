@@ -105,17 +105,39 @@ h1 {
   transform: scale(1.05);
 }
 
+/* Updated Mode Button Text */
 .mode-buttons button.active-mode {
   transform: scale(1.1);
   background: linear-gradient(45deg, #00ffff, #0000ff);
   box-shadow: 0 0 15px #00ffff;
 }
 
+.mode-buttons button {
+  /* Custom Text for Modes */
+  font-size: 1.1em;
+}
+
+.mode-buttons button:nth-child(1) {
+  background: #ff6347;
+}
+
+.mode-buttons button:nth-child(2) {
+  background: #9b30ff;
+}
+
+.mode-buttons button:nth-child(3) {
+  background: #ff1493;
+}
+
+.mode-buttons button:nth-child(4) {
+  background: #32cd32;
+}
+
 /* Hide discharge button when mode is selected */
-body.mode-M1 #discharge-btn,
-body.mode-M2 #discharge-btn,
-body.mode-M3 #discharge-btn,
-body.mode-M4 #discharge-btn {
+body.mode-MPC #discharge-btn,
+body.mode-KF #discharge-btn,
+body.mode-Fuzzy #discharge-btn,
+body.mode-DVS #discharge-btn {
   display: none;
 }
 
@@ -165,7 +187,6 @@ body.mode-M4 #discharge-btn {
   border: 3px solid #00ffff;
   box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
-
 
 /* Right Panel: Info and Graph */
 .right-panel {
@@ -242,19 +263,19 @@ canvas {
 }
 
 /* Mode themes */
-body.mode-M1 {
+body.mode-MPC {
   background: linear-gradient(135deg, #f06, #ffcc00);
 }
 
-body.mode-M2 {
+body.mode-KF {
   background: linear-gradient(135deg, #f0e68c, #0066cc);
 }
 
-body.mode-M3 {
+body.mode-Fuzzy {
   background: linear-gradient(135deg, #ff7f50, #4b0082);
 }
 
-body.mode-M4 {
+body.mode-DVS {
   background: linear-gradient(135deg, #32cd32, #228b22);
 }
 
