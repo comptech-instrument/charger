@@ -30,6 +30,9 @@
         <button onclick="selectMode('M3')" class="mode-btn">Mode M3</button>
         <button onclick="selectMode('M4')" class="mode-btn">Mode M4</button>
       </div>
+
+      <!-- Developers Button (Initially hidden) -->
+      <button id="developers-btn" onclick="openDevelopersDialog()" class="mode-btn" style="display: none;">Developers</button>
     </div>
 
     <!-- Right Section: Info Panels + Graph -->
@@ -75,6 +78,38 @@
     </div>
   </div>
 
+  <!-- Developers Dialog -->
+  <div id="developers-dialog" class="developers-dialog">
+    <div class="developers-content">
+      <h2>Meet the Developers</h2>
+      <div class="developer">
+        <img src="developer1.jpg" alt="Developer 1" class="developer-img">
+        <p>Developer 1</p>
+      </div>
+      <div class="developer">
+        <img src="developer2.jpg" alt="Developer 2" class="developer-img">
+        <p>Developer 2</p>
+      </div>
+      <div class="developer">
+        <img src="developer3.jpg" alt="Developer 3" class="developer-img">
+        <p>Developer 3</p>
+      </div>
+      <div class="developer">
+        <img src="developer4.jpg" alt="Developer 4" class="developer-img">
+        <p>Developer 4</p>
+      </div>
+      <div class="developer">
+        <img src="coguide.jpg" alt="Co-Guide" class="developer-img">
+        <p>Co-Guide</p>
+      </div>
+      <button onclick="closeDevelopersDialog()">Close</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Red Pearl Enterprises. All Rights Reserved.</p>
+  </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="script.js"></script>
   <script>
@@ -92,8 +127,21 @@
       document.getElementById("launch-screen").style.display = "none";
       document.getElementById("app").style.display = "flex";
 
+      // Show developers button only on the main screen
+      document.getElementById("developers-btn").style.display = "block";
+      
       // Start in default mode
       selectMode("M1");
+    }
+
+    // Open Developers Dialog
+    function openDevelopersDialog() {
+      document.getElementById("developers-dialog").style.display = "block";
+    }
+
+    // Close Developers Dialog
+    function closeDevelopersDialog() {
+      document.getElementById("developers-dialog").style.display = "none";
     }
   </script>
 </body>
