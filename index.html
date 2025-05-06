@@ -25,10 +25,10 @@
       </div>
 
       <div class="mode-buttons">
-        <button onclick="selectMode('M1')" class="mode-btn">Mode M1</button>
-        <button onclick="selectMode('M2')" class="mode-btn">Mode M2</button>
-        <button onclick="selectMode('M3')" class="mode-btn">Mode M3</button>
-        <button onclick="selectMode('M4')" class="mode-btn">Mode M4</button>
+        <button onclick="selectMode('MPC')" class="mode-btn">Model Predictive Control (MPC)</button>
+        <button onclick="selectMode('KF')" class="mode-btn">Kalman Filter (KF)</button>
+        <button onclick="selectMode('PID')" class="mode-btn">Fuzzy Logic (PID)</button>
+        <button onclick="selectMode('DVS')" class="mode-btn">Dynamic Voltage Scaling (DVS)</button>
       </div>
 
       <!-- Developers Button (Initially hidden) -->
@@ -135,7 +135,7 @@
       document.getElementById("launch-screen").style.display = "none";
       document.getElementById("app").style.display = "flex";
       document.getElementById("developers-btn").style.display = "block";
-      selectMode("M1");
+      selectMode("MPC");
     }
 
     function openDevelopersDialog() {
