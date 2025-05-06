@@ -77,34 +77,43 @@
       <button id="export-btn" onclick="exportData()" class="export-btn">Export Graph Data</button>
     </div>
   </div>
-
-  <!-- Developers Dialog -->
+  
   <div id="developers-dialog" class="developers-dialog">
     <div class="developers-content">
       <h2>Meet the Developers</h2>
-      <div class="developer">
-        <img src="developer1.jpg" alt="Developer 1" class="developer-img">
-        <p>Developer 1</p>
+  
+      <!-- First row: 4 developers -->
+      <div class="developer-row">
+        <div class="developer">
+          <img src="https://raw.githubusercontent.com/comptech-instrument/charger/af32a7a17b4a2be1ee20a0e9428e6b6c8165f06c/zzz/hem.png" alt="Madivada Hemanth" class="developer-img">
+          <p>Madivada Hemanth</p>
+        </div>
+        <div class="developer">
+          <img src="https://raw.githubusercontent.com/comptech-instrument/charger/af32a7a17b4a2be1ee20a0e9428e6b6c8165f06c/zzz/manoj.png" alt="Nandyala Siva Manoj Reddy" class="developer-img">
+          <p>Nandyala Siva Manoj Reddy</p>
+        </div>
+        <div class="developer">
+          <img src="https://raw.githubusercontent.com/comptech-instrument/charger/af32a7a17b4a2be1ee20a0e9428e6b6c8165f06c/zzz/manju.png" alt="Chintha Manjunath" class="developer-img">
+          <p>Chintha Manjunath</p>
+        </div>
+        <div class="developer">
+          <img src="https://raw.githubusercontent.com/comptech-instrument/charger/af32a7a17b4a2be1ee20a0e9428e6b6c8165f06c/zzz/tunn.png" alt="Kummara Tunish" class="developer-img">
+          <p>Kummara Tunish</p>
+        </div>
       </div>
-      <div class="developer">
-        <img src="developer2.jpg" alt="Developer 2" class="developer-img">
-        <p>Developer 2</p>
+  
+      <!-- Second row: Co-Guide -->
+      <div class="developer-row co-guide">
+        <div class="developer">
+          <img src="https://raw.githubusercontent.com/comptech-instrument/charger/af32a7a17b4a2be1ee20a0e9428e6b6c8165f06c/zzz/sunil.png" alt="Dr. Sunil Kumar A V" class="developer-img">
+          <p>Dr. Sunil Kumar A V (Co-Guide)</p>
+        </div>
       </div>
-      <div class="developer">
-        <img src="developer3.jpg" alt="Developer 3" class="developer-img">
-        <p>Developer 3</p>
-      </div>
-      <div class="developer">
-        <img src="developer4.jpg" alt="Developer 4" class="developer-img">
-        <p>Developer 4</p>
-      </div>
-      <div class="developer">
-        <img src="coguide.jpg" alt="Co-Guide" class="developer-img">
-        <p>Co-Guide</p>
-      </div>
+  
       <button onclick="closeDevelopersDialog()">Close</button>
     </div>
   </div>
+  
 
   <footer>
     <p>&copy; 2025 Red Pearl Enterprises. All Rights Reserved.</p>
@@ -123,23 +132,16 @@
         elem.msRequestFullscreen();
       }
 
-      // Hide launch screen, show app layout
       document.getElementById("launch-screen").style.display = "none";
       document.getElementById("app").style.display = "flex";
-
-      // Show developers button only on the main screen
       document.getElementById("developers-btn").style.display = "block";
-      
-      // Start in default mode
       selectMode("M1");
     }
 
-    // Open Developers Dialog
     function openDevelopersDialog() {
-      document.getElementById("developers-dialog").style.display = "block";
+      document.getElementById("developers-dialog").style.display = "flex";
     }
 
-    // Close Developers Dialog
     function closeDevelopersDialog() {
       document.getElementById("developers-dialog").style.display = "none";
     }
