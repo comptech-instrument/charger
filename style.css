@@ -67,6 +67,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   border-radius: 15px;
+  position: relative; /* Ensures developers button can be placed at the bottom */
 }
 
 h1 {
@@ -117,6 +118,54 @@ body.mode-M3 #discharge-btn,
 body.mode-M4 #discharge-btn {
   display: none;
 }
+
+/* Developers Button (positioned at the bottom) */
+#developers-btn {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  padding: 15px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 12px;
+  background: #00bfff;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#developers-btn:hover {
+  background: #0085b7;
+  transform: scale(1.05);
+}
+
+.developer-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.co-guide {
+  justify-content: center;
+}
+
+.developer {
+  text-align: center;
+  max-width: 150px;
+}
+
+.developer-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #00ffff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
 
 /* Right Panel: Info and Graph */
 .right-panel {
@@ -223,4 +272,54 @@ body.mode-M4 {
   .info-block {
     width: 100%;
   }
+}
+
+/* Developers Dialog Styles */
+#developers-dialog {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.developers-content {
+  background: #222;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  color: #ffffff;
+}
+
+.developer {
+  display: inline-block;
+  margin: 10px;
+}
+
+.developer-img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.developers-content button {
+  padding: 12px 24px;
+  margin-top: 30px;
+  background-color: #ff4d4d;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.developers-content button:hover {
+  background-color: #ff1a1a;
 }
